@@ -22,7 +22,7 @@ def unique_sorted(un):
     return res
 def flatten(r):
     for row in r:
-        if not isinstance(row, (list, tuple)):   # <-- разрешаем и list, и tuple
+        if not isinstance(row, (list, tuple)):
             return "TypeError («строка не строка строки матрицы»)"
     res = []
     for row in r:
