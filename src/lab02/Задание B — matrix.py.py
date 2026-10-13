@@ -1,7 +1,6 @@
 def transpose(m):
     if not m:
-        return []
-    
+        return []  
     c = len(m[0])
     for r in m:
         if len(r) != c:
