@@ -8,7 +8,6 @@ def read_text(path: str | Path, encoding: str = "utf-8") -> str:
     Если файл не найден или кодировка не подходит, ошибки пробрасываются наружу.
     """
     p = Path(path)
-    # FileNotFoundError и UnicodeDecodeError пусть «всплывают» — это нормально
     return p.read_text(encoding=encoding)
 
 
@@ -22,7 +21,6 @@ def write_csv(rows: Iterable[Sequence], path: str | Path,
     p = Path(path)
     rows = list(rows)
 
-    # Проверка, что каждая строка имеет одинаковую длину (Требование Задания А)
     if rows:
         expected_len = len(rows[0])
         for r in rows:
@@ -44,11 +42,9 @@ def ensure_parent_dir(path: str | Path) -> None:
 
 if __name__ == "__main__":
     try:
-        # Читаем текст и сразу его печатаем
         text = read_text("data/input.txt")
         print(text)
         
-        # Молча создаем тестовый CSV (как просят в задании)
         write_csv([("word", "count"), ("test", 3)], "data/check.csv")
         
     except FileNotFoundError:
