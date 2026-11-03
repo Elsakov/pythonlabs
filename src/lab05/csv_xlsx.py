@@ -1,4 +1,4 @@
-# language: python, file: src/lab05/csv_xlsx.py
+
 import csv
 import os
 from openpyxl import Workbook
@@ -7,7 +7,7 @@ def x(a, b):
     with open(a, encoding="utf-8", newline="") as f:
         r = list(csv.reader(f))
         
-    # Проверка 3 (пустой или без заголовка)
+
     if len(r) == 0 or len(r[0]) == 0:
         raise ValueError("CSV без заголовка или пустой")
 

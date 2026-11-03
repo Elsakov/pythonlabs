@@ -1,4 +1,4 @@
-# language: python, file: src/lab05/json_csv.py
+
 import csv
 import json
 import os
@@ -17,7 +17,7 @@ def j(a, b):
     with open(a, encoding="utf-8") as f:
         d = json.load(f)
         
-    # Проверка 1 и 2
+
     if not isinstance(d, list) or len(d) == 0:
         raise ValueError("пустой JSON или неподдерживаемая структура")
     for x in d:
@@ -33,7 +33,7 @@ def j(a, b):
 def c(a, b):
     with open(a, encoding="utf-8", newline="") as f:
         r = csv.DictReader(f)
-        # Проверка 3 (нет заголовка)
+
         if not r.fieldnames:
             raise ValueError("CSV без заголовка или пустой")
         d = list(r)
