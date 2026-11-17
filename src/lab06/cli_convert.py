@@ -1,23 +1,15 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 import argparse
 import sys
 import inspect
 from pathlib import Path
-
-# Импортируем ваши функции из ЛР5 (json_csv.py)
 try:
     from src.lab05.json_csv import j as json_to_csv, c as csv_to_json
 except ImportError as e:
     print(f" Ошибка: Не удалось импортировать функции j и c из src/lab05/json_csv.py\nДетали: {e}")
     sys.exit(1)
-
-# Ищем функцию для XLSX в файле csv_xlsx.py
 csv_to_xlsx = None
 try:
     import src.lab05.csv_xlsx as cx_mod
-    # Ищем любую функцию, которая принимает 2 аргумента (вход и выход)
     for name, obj in inspect.getmembers(cx_mod):
         if inspect.isfunction(obj) and not name.startswith('_'):
             if len(inspect.signature(obj).parameters) == 2:
