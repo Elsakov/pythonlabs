@@ -32,7 +32,7 @@ if __name__ == '__main__':
     print(f'  "  двойные  пробелы  " → {repr(normalize("  двойные  пробелы  "))}')
 
     print()
-    print('tokenize (предполагаем, что текст уже normalize)')
+    print('tokenize')
     print(f'  "привет мир" → {tokenize("привет мир")}')
     print(f'  "hello,world!!!" → {tokenize("hello,world!!!")}')
     print(f'  "по-настоящему круто" → {tokenize("по-настоящему круто")}')
